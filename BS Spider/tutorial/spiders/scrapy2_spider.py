@@ -19,8 +19,12 @@ class QuotesSpider(scrapy.Spider):
             yield scrapy.Request(url, callback = self.parse_contents)
 
     def parse_contents(self, response):
-        for quote in response.css('p'):
+        #one = response.css('div::attr(sp-story)')
+        for quote in response.css('div.sp-story p'):
             yield {
                 "test":quote.extract()
-
-            }
+        }
+        for test in response.css('div.storybody p'):
+            yield {
+                "test":test.extract()
+        }
