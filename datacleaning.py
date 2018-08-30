@@ -1,6 +1,6 @@
 import json
 
-filepath = '/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/page2art.json'
+filepath = '/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/espnarticles.json'
 linekeep = '<p>'
 output = "/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/test.txt"
 
@@ -13,21 +13,31 @@ def clean_data(jsonfile, lineskeep, outputfile):
 
     file = open(outputfile, "w+")
     
-    count = 0
     for x in data:
         if lineskeep in x['test']:
             linetest = x['test']
-            print(linetest)
-            count+=1
             file.write(linetest)
-            if count == 100:
-                file.close()
-                break
-        else:
-            print("nope")
+
+
+    file.close()
+
+def IDtags(txtfile):
+    with open(txtfile) as f:
+        x = f.readlines()
+    count = 0
+    for y in x:
+        for z in y:
+            print(z)
+        count +=1
 
 
 
-clean_data(filepath, linekeep, output)
+    print('Done')
+#clean_data(filepath, linekeep, output)
+IDtags(output)
+'''
+more stuff to remove:
+<font> tags
+a target AREF
 
-
+'''
