@@ -1,8 +1,10 @@
 import json
+import re
 
 filepath = '/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/espnarticles.json'
 linekeep = '<p>'
-output = "/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/test.txt"
+output = "/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/bodytext.txt"
+cleaned = "/Users/scottgleave/Downloads/Billsimmonsproject/BS-Robot/BS Spider/cleanedespn.txt"
 
 #we need to clean the data by finding lines with <p>
 
@@ -21,23 +23,19 @@ def clean_data(jsonfile, lineskeep, outputfile):
 
     file.close()
 
-def IDtags(txtfile):
-    with open(txtfile) as f:
-        x = f.readlines()
-    count = 0
-    for y in x:
-        for z in y:
-            print(z)
-        count +=1
+
+def removetags(file):
+    with open(file) as f:
+        lines = f.readlines()
+    allwords = ''.join(lines)
+    cleanr = re.compile('<.*?>')
+    cleantext = re.sub(cleanr, '', allwords)
+    text_file = open(cleaned, "w")
+    text_file.write(cleantext)
+    text_file.close()
 
 
+clean_data(filepath, linekeep, output)
+cleaned = removetags(output)
 
-    print('Done')
-#clean_data(filepath, linekeep, output)
-IDtags(output)
-'''
-more stuff to remove:
-<font> tags
-a target AREF
 
-'''
