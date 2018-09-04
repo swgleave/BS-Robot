@@ -20,11 +20,12 @@ class QuotesSpider(scrapy.Spider):
 
     def parse_contents(self, response):
         #one = response.css('div::attr(sp-story)')
-        for quote in response.css('div.sp-story p'):
+        for quote in response.css('div.sp-story):
             yield {
                 "test":quote.extract()
         }
-        for test in response.css('div.storybody p'):
+        for test in response.css('div.storybody):
             yield {
                 "test":test.extract()
         }
+    #there is more i am not picking up, other stuff not in any tags but in the story div
