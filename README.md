@@ -20,7 +20,7 @@ My goal was to test out both techniques, and see how they compared.
 
 The below plots displays the loss for both models. 
 
-<img src="https://github.com/swgleave/BS-Robot/blob/master/images/test.md" height="300" width="400">
+<img src="https://github.com/swgleave/BS-Robot/blob/master/images/Plot%20Loss.png" height="375" width="500">
 
 
 
