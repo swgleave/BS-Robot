@@ -14,7 +14,7 @@ Language models are widely used, and have applications in speech recognition and
 
 In the last year, [work](https://arxiv.org/abs/1801.06146) has been published by multiple groups, including Jeremy Howard, that describes how transfer learning can be incorporated into Natural Language Process to build a better language model.  While  pre-trained embedding matrices have been used for a few years, pre-training an entire language model and fine tuning on a new data set is not something that has been extensively studied.  Jeremy Howard has pretrained a language model on a very large Wikipedia corpus, and shared this model in his fast.ai course.  
 
-I built two language models, one trained from scratch with the Bill Simmons corpus, and another fine-tuned on the Bill Simmons corpus after being pre-trained by Jeremy Howard on the Wikipedia corpus. Below is a comparison of the models.
+I built two language models, one trained from scratch with the Bill Simmons corpus, and another fine-tuned on the Bill Simmons corpus after being pre-trained by Stephen Merity of Salesforce on the Wikipedia corpus. Below is a comparison of the models.
 
 ### Metric comparison
 
