@@ -12,49 +12,50 @@ Bill Simmons has written for several different websites over the years, and fort
 
 Language models are widely used, and have applications in speech recognition and sentiment analysis.  While language models have existed for awhile, deep learning has more recently become the defacto way to build language models, with great success.  One way to build a language model is to train a recurrent neural network (usually of the long-short term memory variety) from scratch on a corpus of text.  The text is tokenized, broken up into sequences, and fed into the NN, which learns the probability distribution of these sequences.  
 
-In the last year, [work](https://arxiv.org/abs/1801.06146) has been published by multiple groups, including Jeremy Howard, that describes how transfer learning can be incorporated into Natural Language Process to build a better language model.  While  pre-trained embedding matrices have been used for a few years, pre-training an entire language model and fine tuning on a new data set is not something that has been extensively studied.  
+In the last year, [work](https://arxiv.org/abs/1801.06146) has been published by multiple groups, including Jeremy Howard, that describes how transfer learning can be incorporated into Natural Language Process to build a better language model.  While  pre-trained embedding matrices have been used for a few years, pre-training an entire language model and fine tuning on a new data set is not something that has been extensively studied.  Jeremy Howard has pretrained a language model on a very large Wikipedia corpus, and shared this model in his fast.ai course.  
 
-My goal was to test out both techniques, and see how they compared.  
+I built two language models, one trained from scratch with the Bill Simmons corpus, and another fine-tuned on the Bill Simmons corpus after being pre-trained by Jeremy Howard on the Wikipedia corpus. Below is a comparison of the models.
 
 ### Metric comparison
 
-The below plots displays the loss for both models. 
+The below plot displays the loss for both models. 
 
 <img src="https://github.com/swgleave/BS-Robot/blob/master/images/Plot%20Loss.png" height="375" width="500">
 
+For the pretrained model, the validation loss quickly reaches its minimum of 3.908 at 5 epochs, and steadily increases, while training loss steadily decreases.  As the majority of the model has be pretrained, it takes very few training epochs for validation loss to reach its minimum.
 
+For the model trained from scratch, both validation loss and training loss are on a downward trajectory throughout the first 50 trainig epochs.  I continued to train this model past the 50 epoch mark, and validation loss hits its minimum value of 4.14 after 58 training epochs and slowly increases afterward. Training loss continues to decrease through the first 200 epochs, which is as far as I trained the model.
 
-
-
-
-
-
-
-
-
-
-
-(Describe what happens)
-
-
+Intuitively, it makes sense that the pretrained model would quickly reach a validation minimum, as the weights only need to be tweaked, and not learned from scratch.  The pretrained model ultimately has a better validation loss, with a minimum value of 3.908, compared to the best validation loss of 4.14 from the model trained from scratch.  It appears that the pretraining that was done on a much larger corpus has allowed the model to develop a better understanding of language, driving an improved validation loss.
 
 ### Output comparison
 
-As a comparison, I fed the same two seed sentences into both models, and had it predict the next 100 words, after training the models.  I've added capitalization to start the sentences, but otherwise am displaying the first predictions made by the model at each training level (no cherry picking the good stuff here).
-
-Note that in this comparison, the trained-from-scratch model has been trained for more epochs than the model using transfer learning.  I did this to give the from-scratch model extra time to "catch up", since the transfer learning model had been pretrained. 
+As a comparison, I fed the same two seed sentences into both models, and had it sample the next 100 tokens, after training the models.  I've added capitalization to start the sentences, but otherwise am displaying the first predictions made by the model for the seed phrases, near where validation loss is minimized(no cherry picking the good stuff here).  
 
 For seed sentences, I chose one sentence completely unrelated to sports, from A Tale of Two Cities by Charles Dickens, and one from Bill Simmon's most recent written work, his 2019 Trade Value Column. 
 
-Seed sentence 1: we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way
+Seed sentence 1: we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way...
+
+Model from scratch:
+..., they 're only starting to talk about it for three straight weeks . So it 's definitely weird when they won't make a first - fire game . Just that it's lost . It's also the bad branch thing on the network , amazing , as well as another team ready to call him " big play . " Why can't we be complaining about him it? You can't find the Cavs swinging two days in 2006. Maybe Shaq or v - seemed should have killed him because nobody did money . ...
+
+Pretrained model:
+...to watch any hometown coach normally busting his chops and taking 
+ five steps from someone else 's table during every game . I don't see how he is on his team anymore . Our first three reasonable yes . 
+ ( YES ! YEAH ! ! ! ) 
+ BREAK THE ESPY for " best press conference of the night " 
+ after jon kitna 's first laugh at the telecast , I called me and explained in the theater , " I enjoyed the actress with her look , I really could...
 
 
+Seed sentence 2: Sure, not everything has changed. We still laugh when Knicks fans convince themselves that some A-list free agent is definitely coming. We still joke that...
 
+Model from scratch:
+game 6 of the Warriors - Warriors game in ' 97 ' Ladainian Tomlinson , when Nick Horry is bounced into game 6 of the Bulls - Spurs series in Indiana . I put two highlights on this . our Celtics Celtics grab high schooler Kareem ( an frustrated if Manny slipped ) , Spree sees the 2006 Sacramento masters Sox graphic , as well as the 2002 eastern finals for Madden ( with the Lakers ) on involved . i 'm just waiting . i 'm not trying to change the comic written you about this . Shaq should ...
 
+Pretrained model:
+...was hoping for LJ to start screaming at various stiffs . But that's just me . in fact , when Barkley came up red in ' 93 , our generation ended up being slightly more likely to crack our top 50 . Almost like , if you wish people knew it was coming , then they should have ended up telling him you wouldn't want to see that , that was ate up my back in Patriots week 15 , when the Pats won the super bowl in the NFC silence ( we wouldn't get a... 
 
-
-Seed sentence 2: Sure, not everything has changed. We still laugh when Knicks fans convince themselves that some A-list free agent is definitely coming. We still joke that
-
+It appears that in both models, the model does exhibit a general understanding of the language.  In the outputs seeded with the sentence from the Bill Simmons model, the models see that the Knicks from the NBA are mentioned and continue to mention basketball terms, before changing subjects.  I was especially impressed that the pretrained model mentions LJ, who was a player on the Knicks!  Overall, the language generated by the pretrained model feels slightly more fluid than the trained from scratch model.  The sentences seem generally to have better structure and seem more realistic (although nobody is mistaking this as from a human author).  The pretrained model seemed to generally produce better samples throughout my experimentation.
 
 ## Fun With Bill-Generating Additional Sentences
 
