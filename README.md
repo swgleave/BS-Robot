@@ -59,10 +59,32 @@ It appears that in both models, the model does exhibit a general understanding o
 
 ## Fun With Bill-Generating Additional Sentences
 
+Here are my favorite paragraphs the language model generated about the following topics:
+
+### Topic = Celtics
+
+
+
+
+### Topic = Movies
+
+
+
+
+### Topic = Red Sox
+
+
+
+
+### Topic = Shawshank Redemption
 
 
 
 ## Conclusion
+
+After reviewing example output and plots of the validation loss, it appears that fine tuning a language model on top of pretrained language model produces superior results, when compared with a language model that is trained from scratch (at least for a corpus of this size).  While the model does produce interesting output, in the future I would like to make modifications to better structure the output from the model.  Ideas I have include having the model learn to generate titles for articles, using tags to learn and generate different sections of the article (beginning, middle, or end), or having the model learn to generate specific types of articles (examples include gambling picks or mailbag columns).    
+
+
 
 
 TO DO STILL:
