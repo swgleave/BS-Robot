@@ -59,7 +59,7 @@ It appears that in both models, the model does exhibit a general understanding o
 
 ## Fun With Bill-Generating Additional Sentences
 
-Here are my favorite paragraphs the language model generated about the following topics:
+Here are some of my favorite paragraphs the language model generated:
 
 ### Topic = Celtics
 
