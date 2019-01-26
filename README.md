@@ -63,21 +63,35 @@ Here are my favorite paragraphs the language model generated about the following
 
 ### Topic = Celtics
 
+*celtics ...
+...team , which won the title and lasted only six years . It 's also strange how many people have played this game since I was still watching the Lakers . I don't think Peja , Artest , Stephon marbury , Kidd , Clemens or Allen Iverson and Stephon Marbury , where he handles a pipe dream , so everyone knows how to win a game forgetting the difference . You wonder how the Pistons dribble , Vin Baker and Ray Allen , as well as lots of young P.J. Brown 's partner and last year 's $ 50 million expiring deal [ with Indiana ] . at least that ends with Greg Oden helping to equal some Dan Dickau luxury box offers . except one thing 's going to stomach me : the trade Troy Williams , who 's wasted...*
 
 
 
 ### Topic = Movies
 
+*movies ...
+.... here are the relevant points of the movie : 
+ I don't know exactly what to say . first of all , it 's not my favorite movie preview , and I don't get it . Honestly , I still moved into the theater 7 - 7 times a few times . Bring back the sports gal , spend a ton of time punching 
+ guys , settle down in a pseudo - awful sports movie , lots of lively cameos , cracking big screen actors , always take a cute chick , do some...*
 
+*movies ...
+...already scheduled to feature " hot dog , " " Walking Tall , " " 20 minutes , " " Beverly Hills Cop 2 " and " Silent Rage " both of them . Maybe that 's the most confusing moment of my lifetime , I 'm greeted by silence , shocking family members , the earned - saw fights , tons of Knicks fans turning into Fredo--Matt-esque actors , and even the large amount of money that keeps raising my wife 's interest . And yet , it 's like a reality show on national tv...*
 
 
 ### Topic = Red Sox
 
+*Red Sox ...
+...players were hung out . So what happened to the players is that the ones who broke the bunch ever completely kissed each other in the post-game festivities ? Why aren't they allowed to transfer to hundreds of organized leagues? Do forget these facts and don't like sportswriters that I owe you a lot ? If the NFL is our own sport , the NBA is fan -tastic . I 'm overmatched . I hope this is it . Seriously . 
 
+ -- Grant Hill 
+ 
+ ohiosg : excellent call*
 
+### Topic = Vegas
 
-### Topic = Shawshank Redemption
-
+*Vegas ... 
+...offer unfathomable rehab problems that can only be described as " type of slump . " None of them can . I can't remember them . Dad , I knew he was a free agent . Although this was a sad day for me , disappointed that there wasn't any interest in the slam dunk contest if my father or I had been sitting in his head for the past seven hours . We accepted five people , plus we were expecting something like nine people watching a horse crash . I know if they ever tattoos with one another , then they hang out for three hours , then they 're up by six , if they go away or keep up until they lose the big one .*
 
 
 ## Conclusion
@@ -85,10 +99,4 @@ Here are my favorite paragraphs the language model generated about the following
 After reviewing example output and plots of the validation loss, it appears that fine tuning a language model on top of pretrained language model produces superior results, when compared with a language model that is trained from scratch (at least for a corpus of this size).  While the model does produce interesting output, in the future I would like to make modifications to better structure the output from the model.  Ideas I have include having the model learn to generate titles for articles, using tags to learn and generate different sections of the article (beginning, middle, or end), or having the model learn to generate specific types of articles (examples include gambling picks or mailbag columns).    
 
 
-
-
-TO DO STILL:
-
--Rewrite code so can be a python script or function.  Make function input be how many epochs it runs for and prints results.
--Generate additional sentences
 
